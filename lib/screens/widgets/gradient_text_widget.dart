@@ -17,7 +17,7 @@ class GradientTextWidget extends StatelessWidget {
     return GradientText("${text1}\n${text2 ?? ''}", colors: [AppColors.studio, AppColors.paleSlate],
     textAlign: size.width < 600 && alignment != null ? alignment : null,
     style: TextStyle(fontFamily: 'Poppins',
-    fontSize: size.width * 0.040,
+    fontSize: size.width * 0.030,
     fontWeight: FontWeight.bold),);
   }
 }

@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
         builder:  (context, constraints){
           if(constraints.maxWidth > 950){
             return DeskTopLayout();
-          } else if(constraints.maxWidth > 600){
+          } else if(constraints.maxWidth > 450){
             return TabLayout();
           } else{
             return MobileLayout();

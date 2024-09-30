@@ -10,7 +10,7 @@ class CustomTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      width: size.width*0.36,
+      width: size.width > 950 ?  size.width*0.36 : size.width*0.5,
       decoration:  BoxDecoration(
         border: Border.all(color: Colors.transparent),
         color: AppColors.ebony,
@@ -29,8 +29,8 @@ class CustomTabBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(20)
       ),
         indicatorSize: TabBarIndicatorSize.tab,
-        labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        labelPadding: EdgeInsets.symmetric(horizontal: 20.0),
+        labelStyle:  size.width > 950 ?  const TextStyle(fontSize: 16, fontWeight: FontWeight.bold) :  const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+        labelPadding: const EdgeInsets.symmetric(horizontal: 20.0),
         labelColor: Colors.white,
         unselectedLabelColor: Colors.grey,
         dividerColor: Colors.transparent,
@@ -48,6 +48,7 @@ class CustomTabBarView extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return TabBarView(controller: tabController,
+        physics: const NeverScrollableScrollPhysics(),
         children: [
           AllProjects(size: size),
           AllProjects(size: size),
@@ -65,17 +66,18 @@ final Size  size;
     return Container(
       margin: EdgeInsets.symmetric(horizontal: size.width *0.18),
       child: Center(
-        child: GridView(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        child: GridView(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
           childAspectRatio: 3/3
         ),
           children: [
-            ProjectCard(),
-            ProjectCard(),
-            ProjectCard(),
-            ProjectCard(),
+            const ProjectCard(),
+            const ProjectCard(),
+            const ProjectCard(),
+            const ProjectCard(),
           ]),
       ),
     );

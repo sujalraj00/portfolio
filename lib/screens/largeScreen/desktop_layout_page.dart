@@ -8,6 +8,7 @@ import 'package:portfolio/screens/widgets/gradient_text_widget.dart';
 import 'package:portfolio/screens/widgets/header_text_widget.dart';
 import 'package:portfolio/screens/widgets/myservices_widget.dart';
 import 'package:portfolio/screens/widgets/rotating_image_widget.dart';
+import 'package:portfolio/screens/widgets/techstack_page.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class DeskTopLayout extends StatefulWidget {
@@ -58,7 +59,7 @@ class _DeskTopLayoutState extends State<DeskTopLayout> with SingleTickerProvider
                    HeaderTextWidget(
                      size: size,
                    ),
-                   SizedBox(height: 20,),
+                   const SizedBox(height: 20,),
                    Social_large(size: size),
 
                  ],
@@ -67,7 +68,7 @@ class _DeskTopLayoutState extends State<DeskTopLayout> with SingleTickerProvider
                Expanded(child: Container(
 
 
-                 child: Column
+                 child: const Column
                    (
                    mainAxisAlignment: MainAxisAlignment.center,
                    children: [
@@ -110,6 +111,7 @@ class _DeskTopLayoutState extends State<DeskTopLayout> with SingleTickerProvider
                  ),
                ),
 
+               TechStackPage(),
                Container(
                  width: size.width,
                  padding: EdgeInsets.symmetric(vertical: size.width *0.05),
@@ -124,6 +126,8 @@ class _DeskTopLayoutState extends State<DeskTopLayout> with SingleTickerProvider
                Container(
                  height: size.height,
                  child:  CustomTabBarView(tabController: _tabController),),
+
+
 
              ],
      ),
